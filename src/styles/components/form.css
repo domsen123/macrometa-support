@@ -1,0 +1,9 @@
+.form-group {
+  @apply mb-3;
+  .form-label {
+    @apply text-sm text-gray-600 mb-1 block;
+  }
+  .form-input {
+    @apply border border-gray-300 rounded px-2 py-1 text-sm;
+  }
+}

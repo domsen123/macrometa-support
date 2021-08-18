@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
-
 const title = 'Vitesse × Vitedge'
 const description =
   'Opinionated SSR Vite Starter Template for Cloudflare Workers'

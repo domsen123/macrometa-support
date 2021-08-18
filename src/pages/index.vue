@@ -44,7 +44,17 @@ const props = defineProps({
       :aria-label="t('intro.whats-your-name')"
       type="text"
       autocomplete="false"
-      class="px-4 py-2 text-sm text-center bg-transparent border border-gray-200 rounded outline-none active:outline-none dark:border-gray-700"
+      class="
+        px-4
+        py-2
+        text-sm text-center
+        bg-transparent
+        border border-gray-200
+        rounded
+        outline-none
+        active:outline-none
+        dark:border-gray-700
+      "
       style="width: 250px"
       @keydown.enter="go"
     />
@@ -62,5 +72,6 @@ const props = defineProps({
 <route lang="yaml">
 name: home
 meta:
+  requiresAuth: true
   layout: home
 </route>

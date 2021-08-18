@@ -12,6 +12,7 @@ addEventListener('fetch', (event) => {
           destinations: ['style'],
         },
         willRequestApi({ url, query }) {
+          // console.log('API:', url.pathname, query, event.request.headers)
           console.log('API:', url.pathname, query)
         },
       })

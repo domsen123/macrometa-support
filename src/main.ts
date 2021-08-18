@@ -1,3 +1,4 @@
+import 'vue-global-api'
 import 'windi.css'
 import './styles/main.css'
 import vitedge from 'vitedge'
@@ -5,6 +6,7 @@ import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { installI18n, extractLocaleFromPath, DEFAULT_LOCALE } from './i18n'
 import App from './App.vue'
+// import { useAuth, useRequest } from './services'
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -24,10 +26,16 @@ export default vitedge(
     Object.values(import.meta.globEager('./modules/*.ts')).map((i) =>
       i.install?.(ctx)
     )
-
-    const { app, initialRoute } = ctx
+    const { app, initialRoute, router } = ctx
 
     // Load language asyncrhonously to avoid bundling all languages
     await installI18n(app, extractLocaleFromPath(initialRoute.href))
+    // const { IsAuthenticated, isAuthenticated } = useAuth()
+    router.beforeEach(async (to: any, from: any) => {
+      if (to.meta.requiresAuth) {
+        // await IsAuthenticated()
+        // console.log(`isAuthenticated`, isAuthenticated.value)
+      }
+    })
   }
 )

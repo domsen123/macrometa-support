@@ -3,5 +3,8 @@
 dist
 dist-ssr
 node_modules
-**/_*
+# **/_*
 worker-site/worker
+wrangler.toml
+.env
+.env.production
